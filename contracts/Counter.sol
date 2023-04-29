@@ -8,9 +8,9 @@ contract Counter{
     uint256 private divided;
 
     function add(uint256 x, uint256 y) public {
-        require(x + y >= x, "Integer overflow");
-        total = x + y;
-    }
+    require(x == 0 || y == 0 || x + y > x, "Integer overflow");
+    total = x + y;
+}
 
     function subtract(uint256 x, uint256 y) public {
         require(x >= y, "Result is negative");
